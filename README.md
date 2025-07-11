@@ -1,46 +1,30 @@
-LaxCheck - Open Source Lacrosse Head Identification System
+# LaxCheck - Open Source Lacrosse Head Identification System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/Node.js-20%2B-green)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue)](https://www.typescriptlang.org/)
-[![AI Powered](https://img.shields.io/badge/AI-Powered-purple)](https://github.com/rickybuhr/laxcheck)
 
-> *"A father-son project that became a legacy of innovation in lacrosse collecting"*
-
-**LaxCheck** is the world's first comprehensive, open-source lacrosse head identification and valuation platform. Born from a father-son collaboration to prove that lacrosse heads are profitable collectibles, this system combines cutting-edge machine learning with dual AI analysis to help collectors identify rare equipment and maximize their market value.
-
-## 💙 Our Story
-
-This project began two years ago as a passionate father-son endeavor to revolutionize lacrosse collecting. We believed that vintage lacrosse heads were undervalued treasures waiting to be discovered. Together, we built LaxCheck to prove that lacrosse equipment could be as valuable as any other collectible market.
-
-After my father passed away in November 2024, LaxCheck became more than just a project - it became his legacy. Today, we keep this system completely free and open-source because, as he always said, "lacrosse is already expensive enough." 
-
-Every identification, every market analysis, and every collector who finds value in their equipment honors his memory and continues our shared mission.
-
-**🎯 Mission**: *To democratize lacrosse collecting through intelligent technology and keep his dream alive by helping every collector maximize their equipment's value.*
+**LaxCheck** is a comprehensive, open-source lacrosse head identification and valuation platform that combines machine learning with AI-powered market analysis to help collectors identify equipment and find the highest market prices for their lacrosse heads.
 
 ## 🚀 Features
 
-### 🎯 Core Identification System
-- **Advanced ML Pipeline**: Custom TensorFlow.js model trained on 1000+ images with 14 lacrosse head classes
-- **96.6% Accuracy**: High-precision identification with confidence scoring
-- **Dual AI Analysis**: xAI Grok 2 + OpenAI GPT-4o for comprehensive market intelligence
-- **Smart Preprocessing**: OpenCV-style image enhancement and edge detection
-- **Prototype Detection**: Specialized analysis for rare experimental models (Warrior Blade/Jett Faceoff Prototype)
+### Core Identification System
+- **Advanced ML Pipeline**: Custom TensorFlow.js model with 14+ lacrosse head classes
+- **OpenCV Preprocessing**: Image enhancement, background removal, and edge detection
+- **AI-Powered Analysis**: OpenAI GPT-4 Vision integration for comprehensive equipment analysis
+- **PDF Report Generation**: Detailed analysis reports with technical specifications and market data
 
-### 💰 Maximum Value Intelligence
-- **Historical Context**: Deep analysis of equipment origins, manufacturing timeline, and legacy
-- **Market Optimization**: Find the highest prices across eBay, SidelineSwap, and specialized forums
-- **Collectibility Scoring**: Rarity assessment with authentication factors
-- **Platform Analytics**: Strategic selling advice for maximum profit
-- **Real-time Pricing**: Live market data with trend analysis
+### Market Intelligence
+- **Real-time Valuation**: Live market pricing from multiple platforms
+- **Highest Price Finder**: Identifies best selling platforms and optimal pricing
+- **Market Trends**: Real-time pricing data and market movement tracking
+- **Demand Analysis**: Platform-specific demand and pricing optimization
 
-### 🚀 User Experience
-- **Instant Upload**: Drag & drop up to 3 photos for multi-angle analysis
-- **Mobile Optimized**: Perfect performance on all devices
-- **Marketplace Links**: Direct links to eBay and SidelineSwap with pre-filled searches
-- **Comprehensive Reports**: Detailed analysis with selling strategies
-- **Free Forever**: No paywalls, no subscriptions - completely free
+### User Experience
+- **Drag & Drop Upload**: Support for up to 3 photos per analysis
+- **Mobile Optimized**: Responsive design for desktop and mobile use
+- **Real-time Processing**: Live progress tracking during analysis
+- **Performance Dashboard**: System analytics and identification metrics
 
 ## 🛠️ Technology Stack
 
@@ -60,12 +44,11 @@ Every identification, every market analysis, and every collector who finds value
 - **OpenAI SDK** for AI analysis
 - **Sharp** for image processing
 
-### Machine Learning & AI
-- **LaxHeadIdentifier-3**: Custom TensorFlow model with 14 specialized classes
-- **Dual AI Providers**: xAI Grok 2 (primary) + OpenAI GPT-4o (fallback)
-- **Advanced Preprocessing**: Image enhancement → resize → grayscale → edge detection
-- **Smart Corrections**: User feedback system for continuous improvement
-- **Prototype Intelligence**: Specialized prompts for rare collector pieces
+### Machine Learning
+- **Custom TensorFlow Model**: Trained on 1000+ lacrosse head images
+- **Google Teachable Machine**: Training pipeline for model updates
+- **Image Preprocessing**: Advanced OpenCV-style processing pipeline
+- **Confidence Thresholding**: Smart fallback to AI analysis
 
 ## 🏗️ Project Structure
 
@@ -104,7 +87,7 @@ laxcheck/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/rickybuhr/laxcheck.git
+git clone https://github.com/yourusername/laxcheck.git
 cd laxcheck
 ```
 
@@ -151,9 +134,8 @@ npm run electron:build
 # Database
 DATABASE_URL=postgresql://user:password@host:port/database
 
-# AI Services (Optional - enhances analysis)
+# AI Services (Optional)
 OPENAI_API_KEY=your_openai_api_key
-XAI_API_KEY=your_grok_api_key
 
 # Development
 NODE_ENV=development
@@ -162,10 +144,13 @@ SESSION_SECRET=your_session_secret
 
 ### ML Model
 
-**Supported Equipment (14 Classes):**
-- **Warrior**: Jett, Blade, Blade/Jett Faceoff Prototype, Evolution 2.0, Razer, 98' Team USA Collector Stick
-- **Brine**: Vapor, E3, Truth, Superlight 2000, Cyber
-- **Other Brands**: Nike Blur 10 Degree, STX SAM II, Reebok 6K
+The system includes a pre-trained model with these classes:
+- Warrior Blade, Jett, Evolution series
+- Brine Edge, Cyber, Vapor series  
+- STX Excalibur, SAM II
+- Nike Blur, Reebok 6K
+- Vintage and rare collector pieces
+- Unknown (fallback class)
 
 To train a custom model:
 1. Collect 15+ photos per lacrosse head model
@@ -231,12 +216,11 @@ We welcome contributions from the lacrosse community! Here's how to help:
 
 ## 📊 Performance
 
-- **Model Accuracy**: 96.6% on real-world testing (up to 99.9% on clear images)
-- **Processing Time**: 3-8 seconds per comprehensive analysis
-- **Supported Formats**: JPEG, PNG (HEIC conversion available)
-- **Max File Size**: 10MB per image, up to 3 images per analysis
-- **AI Analysis**: Grok 2 primary with OpenAI GPT-4o intelligent fallback
-- **Success Rate**: 99.9% system uptime with robust error handling
+- **Model Accuracy**: 87-92% on validation set
+- **Processing Time**: 2-8 seconds per analysis
+- **Supported Formats**: JPEG, PNG, WebP
+- **Max File Size**: 10MB per image
+- **Concurrent Users**: Optimized for 100+ simultaneous analyses
 
 ## 🛡️ Privacy & Security
 
@@ -249,45 +233,30 @@ We welcome contributions from the lacrosse community! Here's how to help:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🏆 Community Impact & Legacy
+## 🏆 Community Impact
 
-LaxCheck represents more than technology - it's a testament to what passion and family collaboration can achieve. By keeping this system completely free and open-source, we honor my father's belief that knowledge should be accessible to everyone.
+LaxCheck was created as a community gift to help collectors maximize the value of their lacrosse equipment. By making this system open source, we enable:
 
-**What We Enable:**
-- **Maximum Value Discovery**: Help collectors find the highest prices across all platforms
-- **Market Intelligence**: Real-time data to optimize selling strategies
-- **Educational Impact**: Preserve lacrosse equipment history and share market knowledge
-- **Community Growth**: Unite collectors through shared expertise and collaborative improvement
-
-**Our Promise:** LaxCheck will always remain free because lacrosse is already expensive enough. Every successful identification helps preserve the legacy of a father who believed vintage lacrosse heads deserved recognition as valuable collectibles.
+- **Maximum Value**: Find the highest prices across all major marketplaces
+- **Market Intelligence**: Real-time pricing data and platform optimization
+- **Educational Value**: Learn about lacrosse equipment history and market trends
+- **Community Building**: Collaborative improvement of pricing accuracy
 
 ## 🙏 Acknowledgments
 
-**In Memory Of**: My father, who started this journey with me and believed that lacrosse equipment deserved the same respect as any collectible market. His passion, vision, and encouragement made LaxCheck possible.
-
-**Special Thanks:**
-- Google Teachable Machine for democratizing machine learning
-- xAI and OpenAI for providing powerful AI analysis capabilities
-- The lacrosse collecting community for sharing photos, market data, and expertise
-- Every contributor who helps preserve lacrosse equipment history
-- Collectors who provide feedback to improve our accuracy
+- Google Teachable Machine for accessible ML training
+- OpenAI for advanced image analysis capabilities
+- The lacrosse collecting community for photos and market data
+- Contributors who help improve the system
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/rickybuhr/laxcheck/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/rickybuhr/laxcheck/discussions)  
-- **Support**: Keep LaxCheck running with a [donation](https://venmo.com/Ricky-Buhr) (@Ricky-Buhr)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/laxcheck/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/laxcheck/discussions)
+- **Discord**: [Community Discord](https://discord.gg/laxcheck) (coming soon)
 
 ---
 
-## 💙 A Father's Legacy Lives On
+**Built with ❤️ for the lacrosse community**
 
-*"This project started as a father-son adventure to prove lacrosse heads are valuable collectibles. Today, it continues as a memorial to a man who believed in the power of innovation and community. Every identification we provide, every collector we help, and every rare piece we preserve honors his memory and keeps his dream alive."*
-
-**Built with ❤️ in memory of a great father and for the lacrosse community**
-
-*LaxCheck will always remain free and open-source, dedicated to preserving lacrosse equipment history and maximizing collector value through intelligent technology and community collaboration.*
-
----
-
-⭐ **If LaxCheck helps you discover value in your collection, please star this repository to honor the legacy and help others find it.**
+*LaxCheck is dedicated to preserving lacrosse equipment history and maximizing collector value through open-source market intelligence and community collaboration.*
